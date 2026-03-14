@@ -57,4 +57,16 @@ public class FPS_Movement : MonoBehaviour
         jump = true;
     }
 
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Rigidbody body = hit.collider.attachedRigidbody;
+
+        // Only push objects that have a Rigidbody and aren't "Kinematic"
+        if (body != null && !body.isKinematic)
+        {
+            // The 2.0f is the "push force" - increase this if the chair is too heavy
+            body.AddForce(hit.moveDirection * 2.0f, ForceMode.Impulse);
+        }
+    }
+
 }
