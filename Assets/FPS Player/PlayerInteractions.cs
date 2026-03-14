@@ -45,7 +45,7 @@ public class PlayerInteractions : MonoBehaviour
         if (Physics.SphereCast(raycastPos, sphereCastRadius, mainCamera.transform.forward, out hit, maxDistance, 1 << interactableLayerIndex))
         {
 
-            lookObject = hit.collider.transform.root.gameObject;
+            lookObject = hit.collider.gameObject;
 
         }
         else
@@ -115,14 +115,28 @@ public class PlayerInteractions : MonoBehaviour
     }
 
     public void PickUpObject()
+{
+    pickupRB = lookObject.GetComponent<Rigidbody>();
+
+    if (pickupRB == null)
+    {
+        pickupRB = lookObject.GetComponentInChildren<Rigidbody>();
+    }
+
+    if (pickupRB != null)
     {
         physicsObject = lookObject.GetComponentInChildren<FPSGrab>();
         currentlyPickedUpObject = lookObject;
-        pickupRB = currentlyPickedUpObject.GetComponent<Rigidbody>();
+        
         pickupRB.constraints = RigidbodyConstraints.FreezeRotation;
         physicsObject.playerInteractions = this;
         StartCoroutine(physicsObject.PickUp());
     }
+    else
+    {
+        Debug.LogWarning("You tried to pick up " + lookObject.name + ", but it has no Rigidbody!");
+    }
+}
 
 
 }
