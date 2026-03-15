@@ -89,54 +89,95 @@ public class PlayerInteractions : MonoBehaviour
 
     //Velocity movement toward pickup parent and rotation
     private void FixedUpdate()
+{
+    if (currentlyPickedUpObject != null)
     {
-        if (currentlyPickedUpObject != null)
+        // Check if we are dragging a heavy object
+        DraggableObject drag = currentlyPickedUpObject.GetComponent<DraggableObject>();
+        
+        // only run the lift physics if it is NOT a draggable heavy object
+        if (drag == null) 
         {
-            currentDist = Vector3.Distance(pickupParent.position, pickupRB.position);
-            currentSpeed = Mathf.SmoothStep(minSpeed, maxSpeed, currentDist / maxDistance);
-            currentSpeed *= Time.fixedDeltaTime;
-            Vector3 direction = pickupParent.position - pickupRB.position;
-            pickupRB.linearVelocity = direction.normalized * currentSpeed;
-            //Rotation
-            lookRot = Quaternion.LookRotation(mainCamera.transform.position - pickupRB.position);
-            lookRot = Quaternion.Slerp(mainCamera.transform.rotation, lookRot, rotationSpeed * Time.fixedDeltaTime);
-            pickupRB.MoveRotation(lookRot);
-        }
+           
+            if (pickupRB == null)
+            {
+                pickupRB = currentlyPickedUpObject.GetComponent<Rigidbody>();
+                if (pickupRB == null) pickupRB = currentlyPickedUpObject.GetComponentInChildren<Rigidbody>();
+            }
 
+            if (pickupRB != null)
+            {
+                currentDist = Vector3.Distance(pickupParent.position, pickupRB.position);
+                currentSpeed = Mathf.SmoothStep(minSpeed, maxSpeed, currentDist / maxDistance);
+                currentSpeed *= Time.fixedDeltaTime;
+                Vector3 direction = pickupParent.position - pickupRB.position;
+                pickupRB.linearVelocity = direction.normalized * currentSpeed;
+                
+                lookRot = Quaternion.LookRotation(mainCamera.transform.position - pickupRB.position);
+                lookRot = Quaternion.Slerp(mainCamera.transform.rotation, lookRot, rotationSpeed * Time.fixedDeltaTime);
+                pickupRB.MoveRotation(lookRot);
+            }
+        }
     }
+}
 
     //Release the object
     public void BreakConnection()
     {
-        pickupRB.constraints = RigidbodyConstraints.None;
+        if (currentlyPickedUpObject == null) return; // Nothing to break
+
+        // Stop dragging if it's heavy
+        DraggableObject draggable = currentlyPickedUpObject.GetComponent<DraggableObject>();
+        if (draggable != null) draggable.StopDragging();
+
+        // Stop FPSGrab if it exists
+        if (physicsObject != null) physicsObject.pickedUp = false;
+
+        // Reset constraints only if the RB exists
+        if (pickupRB != null)
+        {
+            pickupRB.constraints = RigidbodyConstraints.None;
+            pickupRB = null; // Clear this so FixedUpdate doesn't try to use it
+        }
+
         currentlyPickedUpObject = null;
-        physicsObject.pickedUp = false;
         currentDist = 0;
     }
 
     public void PickUpObject()
-{
-    pickupRB = lookObject.GetComponent<Rigidbody>();
+    {
+        // Check if it's "Heavy" before doing anything else
+        if (lookObject.CompareTag("Heavy"))
+        {
+            DraggableObject drag = lookObject.GetComponent<DraggableObject>();
+            if (drag != null)
+            {
+                drag.StartDragging(pickupParent);
+                currentlyPickedUpObject = lookObject;
+                return; // Exit here so we don't pick it up!
+            }
+        }
 
-    if (pickupRB == null)
-    {
-        pickupRB = lookObject.GetComponentInChildren<Rigidbody>();
-    }
+        pickupRB = lookObject.GetComponent<Rigidbody>();
+        if (pickupRB == null)
+        {
+            pickupRB = lookObject.GetComponentInChildren<Rigidbody>();
+        }
 
-    if (pickupRB != null)
-    {
-        physicsObject = lookObject.GetComponentInChildren<FPSGrab>();
-        currentlyPickedUpObject = lookObject;
-        
-        pickupRB.constraints = RigidbodyConstraints.FreezeRotation;
-        physicsObject.playerInteractions = this;
-        StartCoroutine(physicsObject.PickUp());
+        if (pickupRB != null)
+        {
+            physicsObject = lookObject.GetComponentInChildren<FPSGrab>();
+            currentlyPickedUpObject = lookObject;
+
+            pickupRB.constraints = RigidbodyConstraints.FreezeRotation;
+            physicsObject.playerInteractions = this;
+            StartCoroutine(physicsObject.PickUp());
+        }
+        else
+        {
+            Debug.LogWarning("You tried to pick up " + lookObject.name + ", but it has no Rigidbody!");
+        }
     }
-    else
-    {
-        Debug.LogWarning("You tried to pick up " + lookObject.name + ", but it has no Rigidbody!");
-    }
-}
 
 
 }
