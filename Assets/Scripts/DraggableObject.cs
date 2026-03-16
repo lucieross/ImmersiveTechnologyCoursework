@@ -51,7 +51,7 @@ public class DraggableObject : MonoBehaviour
         {
             Vector3 target = new Vector3(dragAnchor.position.x, rb.position.y, dragAnchor.position.z);
             Vector3 desiredVelocity = (target - rb.position).normalized * dragSpeed;
-            rb.linearVelocity = Vector3.Lerp(rb.linearVelocity, desiredVelocity, 0.1f);
+            rb.linearVelocity = Vector3.Lerp(rb.linearVelocity, desiredVelocity, 0.08f);
         }
     }
 
