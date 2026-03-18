@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7364776815049670213}
   - component: {fileID: 3386854521014641321}
   - component: {fileID: 6232522522129199594}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: stapler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 2
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7668666537370351809}
   - component: {fileID: 8637713264197253580}
   - component: {fileID: 1069308488984667916}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: bookPile2_book2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 2
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 9157379912552732048}
   - component: {fileID: 4620064565217446002}
   - component: {fileID: 2451404334749376196}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: bookPile2_book5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +446,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 2
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -591,7 +591,7 @@ GameObject:
   - component: {fileID: 3432751736190429189}
   - component: {fileID: 7920692116148511704}
   - component: {fileID: 2736019382959010779}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: bookPile2_book6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -734,7 +734,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 2
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -879,7 +879,7 @@ GameObject:
   - component: {fileID: 7888255300923935674}
   - component: {fileID: 4709081452312054121}
   - component: {fileID: 2851796088798373437}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: bookPile2_book9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1022,7 +1022,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 2
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -1167,7 +1167,7 @@ GameObject:
   - component: {fileID: 4043493584416648670}
   - component: {fileID: 4853413473868457827}
   - component: {fileID: 6392423617173582588}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: bookPile2_book7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1310,7 +1310,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 2
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -1455,7 +1455,7 @@ GameObject:
   - component: {fileID: 2299558052526571654}
   - component: {fileID: 3441803694765217970}
   - component: {fileID: 5151694180041965206}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: bookPile2_book3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1598,7 +1598,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 2
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -1743,7 +1743,7 @@ GameObject:
   - component: {fileID: 4812517074493794635}
   - component: {fileID: 3258625903258054782}
   - component: {fileID: 8224486589539217348}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: bookPile2_book8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1886,7 +1886,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 2
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -2031,7 +2031,7 @@ GameObject:
   - component: {fileID: 3664596048424611430}
   - component: {fileID: 7992527975257901490}
   - component: {fileID: 1024737222386205612}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: bookPile2_book1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2174,7 +2174,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 2
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -2319,7 +2319,7 @@ GameObject:
   - component: {fileID: 7180127753072579838}
   - component: {fileID: 2840384201373270814}
   - component: {fileID: 1197320298847645182}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: bookPile2_book4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2462,7 +2462,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 2
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -2601,7 +2601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3233912992141576513}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: bookPile2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2641,7 +2641,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 875399968752361208}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: (Prb)BookPile2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

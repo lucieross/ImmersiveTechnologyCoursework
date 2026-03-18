@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4234533904407267906}
   - component: {fileID: 8795893320053882736}
   - component: {fileID: 2478575675841014885}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: marker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 2
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1

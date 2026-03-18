@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 14388260782344354}
   - component: {fileID: 1862134960173149073}
   - component: {fileID: 4625018686565045826}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: fan_small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 2
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 6129699065837989620}
   - component: {fileID: 1302845677399198024}
   - component: {fileID: 8917772448247246281}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: R Fan
   m_TagString: Untagged
   m_Icon: {fileID: 0}

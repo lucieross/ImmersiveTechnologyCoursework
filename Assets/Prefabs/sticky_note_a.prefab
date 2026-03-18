@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5501596977098546894}
   - component: {fileID: 454152927462216595}
   - component: {fileID: 7711776976721030093}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: sticky_note_a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 2
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1

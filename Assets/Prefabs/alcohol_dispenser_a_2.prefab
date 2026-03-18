@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7185642319097220520}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Pres
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 272829152695052082}
   - component: {fileID: 7311657310415792511}
   - component: {fileID: 863896813481959465}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 2
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 4408949107005690202}
   - component: {fileID: 1214169554632476260}
   - component: {fileID: 2902290456516953816}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Animatable
   m_TagString: Untagged
   m_Icon: {fileID: 0}

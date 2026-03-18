@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1051545578344116886}
   - component: {fileID: 4445174466751089298}
   - component: {fileID: 1138069881132363307}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: deskPlant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 2
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -329,7 +329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 923570209670923960}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: (Prb)DeskPlant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
