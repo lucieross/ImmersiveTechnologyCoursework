@@ -5,8 +5,8 @@ public class FuseManager : MonoBehaviour
 {
     private int fusesInstalled = 0;
     public int requiredFuses = 3;
-
-    // You can hook up your "Power On" function here in the Inspector 
+    public GameObject rewireMiniGame;
+ 
 
     public UnityEvent onAllFusesInstalled;
 
@@ -15,12 +15,11 @@ public class FuseManager : MonoBehaviour
         fusesInstalled++;
         if (fusesInstalled >= requiredFuses)
         {
+            rewireMiniGame.SetActive(true);
             CompleteCircuit();
         }
 
     }
-
-
 
     public void FuseRemoved()
     {
@@ -31,6 +30,7 @@ public class FuseManager : MonoBehaviour
 
     void CompleteCircuit()
     {
+        rewireMiniGame.SetActive(true);
         onAllFusesInstalled.Invoke();
 
     }
