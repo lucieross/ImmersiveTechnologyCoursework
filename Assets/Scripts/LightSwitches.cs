@@ -7,6 +7,7 @@ public class LightingManager : MonoBehaviour
     [SerializeField] GameObject directionalLight;
 
     private FlashlightBattery batteryScript;
+    private bool powerCut = false;
 
     void Start()
     {
@@ -28,15 +29,20 @@ public class LightingManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        CutThePower();
+        if (!powerCut)
+        {
+            CutThePower();
+        }
+        
     }
 
     public void CutThePower()
     {
+        powerCut = true;
         storedLightmaps = LightmapSettings.lightmaps;
         LightmapSettings.lightmaps = new LightmapData[0];
 
-        // 3. Ensure the light beam is active when the power cuts
+        // Ensure the light beam is active when the power cuts
         if (directionalLight != null) directionalLight.SetActive(true);
 
         RenderSettings.fog = true;

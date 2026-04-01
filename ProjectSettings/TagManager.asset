@@ -8,6 +8,7 @@ TagManager:
   - Furniture
   - Heavy
   - key
+  - Fuse
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Environment
   - Prop
   - light
-  - 
+  - Fuses
   - 
   - 
   - 
