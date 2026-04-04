@@ -7,7 +7,7 @@ public class LightingManager : MonoBehaviour
     [SerializeField] GameObject directionalLight;
 
     private FlashlightBattery batteryScript;
-    private bool powerCut = false;
+    public bool powerCut = false;
 
     void Start()
     {

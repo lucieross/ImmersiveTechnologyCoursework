@@ -9,6 +9,7 @@ TagManager:
   - Heavy
   - key
   - Fuse
+  - KeyCard
   layers:
   - Default
   - TransparentFX

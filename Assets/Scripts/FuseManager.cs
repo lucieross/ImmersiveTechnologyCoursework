@@ -5,7 +5,7 @@ public class FuseManager : MonoBehaviour
 {
     private int fusesInstalled = 0;
     public int requiredFuses = 3;
-    public GameObject rewireMiniGame;
+    public GameObject keyCard;
  
 
     public UnityEvent onAllFusesInstalled;
@@ -15,7 +15,6 @@ public class FuseManager : MonoBehaviour
         fusesInstalled++;
         if (fusesInstalled >= requiredFuses)
         {
-            rewireMiniGame.SetActive(true);
             CompleteCircuit();
         }
 
@@ -30,7 +29,7 @@ public class FuseManager : MonoBehaviour
 
     void CompleteCircuit()
     {
-        rewireMiniGame.SetActive(true);
+        keyCard.SetActive(true);
         onAllFusesInstalled.Invoke();
 
     }
