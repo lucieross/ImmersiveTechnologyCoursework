@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class LightingManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class LightingManager : MonoBehaviour
 
     private FlashlightBattery batteryScript;
     public bool powerCut = false;
+
+    public AudioSource PowerOutage;
 
     void Start()
     {
@@ -31,18 +34,21 @@ public class LightingManager : MonoBehaviour
     {
         if (!powerCut)
         {
-            CutThePower();
+            StartCoroutine(CutThePower());
         }
         
     }
 
-    public void CutThePower()
+    public IEnumerator CutThePower()
     {
+        PowerOutage.Play();
+        yield return new WaitForSeconds(1f);
         powerCut = true;
+        yield return new WaitForSeconds(0.5f);
+        PowerOutage.Stop();
         storedLightmaps = LightmapSettings.lightmaps;
         LightmapSettings.lightmaps = new LightmapData[0];
 
-        // Ensure the light beam is active when the power cuts
         if (directionalLight != null) directionalLight.SetActive(true);
 
         RenderSettings.fog = true;
