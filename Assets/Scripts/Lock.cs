@@ -8,6 +8,7 @@ public class Lock : MonoBehaviour
     [SerializeField] GameObject doorHandle;
     [SerializeField] GameObject doorHandle2;
     [SerializeField] GameObject key;
+    [SerializeField] AudioSource UnlockSound;
     public bool locked;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,6 +37,7 @@ public class Lock : MonoBehaviour
         doorHandle2.GetComponent<BoxCollider>().enabled = true;
         this.GetComponent<Rigidbody>().isKinematic = false;
         this.GetComponent<BoxCollider>().isTrigger = false;
+        UnlockSound.Play();
         locked = false;
     }
 
