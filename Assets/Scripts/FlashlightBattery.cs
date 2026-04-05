@@ -8,6 +8,8 @@ public class FlashlightBattery : MonoBehaviour
     public float drainRate = 0.3f;
     public float maxBattery = 100f;
 
+    public bool isPickedUp = false;
+
     [Header("UI Reference")]
     [SerializeField] TextMeshProUGUI batteryText;
 
@@ -16,32 +18,44 @@ public class FlashlightBattery : MonoBehaviour
 
     void Start()
     {
-        if (lightObject != null) lightObject.SetActive(true);
+        if (lightObject != null) lightObject.SetActive(false);
+        if (batteryText != null) batteryText.gameObject.SetActive(false);
     }
 
     void Update()
     {
-        // 2. The battery drains as long as there is power left
-        if (batteryLevel > 0)
+        // The battery drains as long as there is power left
+        if (isPickedUp && batteryLevel > 0)
         {
             batteryLevel -= drainRate * Time.deltaTime;
             batteryLevel = Mathf.Clamp(batteryLevel, 0, maxBattery);
 
-            // --- Flicker Logic ---
+            // Flicker Logic 
             if (batteryLevel < 15f)
             {
-                // Randomly flicker the light when it's almost dead
                 lightObject.SetActive(Random.value > 0.3f);
             }
+            
+            UpdateUI(); 
         }
         else
         {
-            // 3. If battery hits 0, kill the light and the UI
+            // If battery hits 0, kill the light and the UI
             if (lightObject != null) lightObject.SetActive(false);
             if (batteryText != null) batteryText.gameObject.SetActive(false);
         }
+    }
 
-        UpdateUI();
+    public void OnFlashlightGrabbed()
+    {
+        isPickedUp = true;
+        
+        // Turn the light and UI on the moment it's grabbed
+        if (batteryLevel > 0)
+        {
+            if (lightObject != null) lightObject.SetActive(true);
+            if (batteryText != null) batteryText.gameObject.SetActive(true);
+        }
     }
 
     void UpdateUI()
@@ -57,7 +71,7 @@ public class FlashlightBattery : MonoBehaviour
         batteryLevel += amount;
         batteryLevel = Mathf.Clamp(batteryLevel, 0, maxBattery);
 
-        // 4. Bring the light and UI back to life if we picked up a battery
+        // Bring the light and UI back to life if we picked up a battery
         if (batteryLevel > 0)
         {
             if (lightObject != null) lightObject.SetActive(true);

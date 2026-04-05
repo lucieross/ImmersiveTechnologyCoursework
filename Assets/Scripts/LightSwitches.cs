@@ -11,6 +11,7 @@ public class LightingManager : MonoBehaviour
     public bool powerCut = false;
 
     public AudioSource PowerOutage;
+    public AudioSource Instructions;
 
     void Start()
     {
@@ -46,6 +47,7 @@ public class LightingManager : MonoBehaviour
         powerCut = true;
         yield return new WaitForSeconds(0.5f);
         PowerOutage.Stop();
+        Instructions.Play();
         storedLightmaps = LightmapSettings.lightmaps;
         LightmapSettings.lightmaps = new LightmapData[0];
 
