@@ -10,8 +10,10 @@ public class FlashlightBattery : MonoBehaviour
 
     public bool isPickedUp = false;
 
-    [Header("UI Reference")]
+    [Header("UI and Voice Reference")]
     [SerializeField] TextMeshProUGUI batteryText;
+    public AudioSource BatteryAudio;
+
 
     [Header("Light Reference")]
     [SerializeField] GameObject lightObject;
@@ -48,6 +50,10 @@ public class FlashlightBattery : MonoBehaviour
 
     public void OnFlashlightGrabbed()
     {
+        if (!isPickedUp)
+        {
+            BatteryAudio.Play();
+        }
         isPickedUp = true;
         
         // Turn the light and UI on the moment it's grabbed
