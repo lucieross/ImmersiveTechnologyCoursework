@@ -24381,8 +24381,11 @@ MonoBehaviour:
   source: {fileID: 1132889440}
   creepySounds:
   - {fileID: 8300000, guid: 62828b7113a345c4fb8988e526f6d52c, type: 3}
-  - {fileID: 8300000, guid: 65f7972ec300fcf48a8ea39a8fd726ad, type: 3}
-  - {fileID: 8300000, guid: 4b99ae620e2ba5249bf78e164a0b7a07, type: 3}
+  - {fileID: 8300000, guid: 62828b7113a345c4fb8988e526f6d52c, type: 3}
+  - {fileID: 8300000, guid: 62828b7113a345c4fb8988e526f6d52c, type: 3}
+  - {fileID: 8300000, guid: 62828b7113a345c4fb8988e526f6d52c, type: 3}
+  - {fileID: 8300000, guid: 62828b7113a345c4fb8988e526f6d52c, type: 3}
+  - {fileID: 8300000, guid: 62828b7113a345c4fb8988e526f6d52c, type: 3}
   playOnlyWhenPowerIsOff: 1
   powerScript: {fileID: 1035396072}
   soundDelay: 0.4
